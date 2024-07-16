@@ -3,7 +3,7 @@ def create_youtube_video(title,description):
 	#youtubev["likes"]=495
 	return youtubev
 def like(youtubev):
-	 if "likes" in youtubev:
+	if "likes" in youtubev:
 		youtubev["likes"]+=1
 		return youtubev
 def dislike(youtubev):
