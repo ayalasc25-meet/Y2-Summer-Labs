@@ -3,14 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Fortune Teller</title>
+<style>
+body {text-align: center;}
+h1 {
+  font-size: 80px;
+}
+p{font-size: 60px;}
+button{font-size:60px;}
+a{font-size: 60px;}
+input{font-size: 60px;}
+body {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmO5N-T4gfF7v-DTvlXkMu0N7wKrPwC86OmtHe3Wg0cwIuakKQGxBGaA-1B-VFgms_EqI&usqp=CAU');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+</style> 
 </head>
 <body>
     <h1>Welcome to the Fortune Teller</h1>
-    <p>Click the link below to get your fortune!</p>
-    <a href="/fortune">Tell me my fortune</a>
+    <p>Write your birthmonth and then submit to get your customized fortune!</p>
     <br>
     <form action="/home" method="POST">
         <input type="text" name="birthmonth" placeholder="Write your birth month">
+        <br>
+        <br>
         <button type ="submit">What's my fortune?</button>
     </form>
 
