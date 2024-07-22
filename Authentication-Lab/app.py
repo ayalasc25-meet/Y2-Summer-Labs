@@ -23,7 +23,6 @@ firebaseConfig = {
   'measurementId': "G-YD5X1BD7HL",
 
   'databaseURL': ""
-
 }
 
 firebase = pyrebase.initialize_app(firebaseConfig)
@@ -43,7 +42,6 @@ def signup():
         except:
             error_msg = "Womp it failed. Try again"
             return render_template("signup.html",error=error_msg)
-
 
 @app.route('/home', methods=['GET', 'POST'])
 def home():

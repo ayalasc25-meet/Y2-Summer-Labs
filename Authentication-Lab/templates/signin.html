@@ -8,9 +8,25 @@
 <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 
 </head>
+<style>
+
+
+body {
+  background-image: url('https://static.vecteezy.com/system/resources/thumbnails/007/164/537/small_2x/fingerprint-identity-sensor-data-protection-system-podium-hologram-blue-light-and-concept-free-vector.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.input-container{font-size: 60px}
+.input-field{font-size: 60px}
+.switch{font-size: 30px}
+
+h1{font-size: 50px;}
+button{font-size: 50px;}
+</style>
   <body>
     <form action="/signin" method="POST" style="max-width:500px;margin:auto">
-      <h1 style="color: red;">Sign in</h1>
+      <h1 style="color: blue;">Sign in</h1>
       <div class="input-container">
         <i class="fa fa-user icon"></i>
         <input class="input-field" type="text" placeholder="Email" name="email">
@@ -21,8 +37,9 @@
         <i class="fa fa-key icon"></i>
         <input class="input-field" type="password" placeholder="Password" name="password">
       </div>
+      <br>
       <button type="submit" class="btn">Sign in</button>
     </form>
-    <a href="/" style="color:red">Don't have an account? Sign up!</a>
+    <a href="/" class = switch style="color:blue">Don't have an account? Sign up!</a>
 </body>
 </html>

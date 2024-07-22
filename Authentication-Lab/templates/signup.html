@@ -2,15 +2,29 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+<style>
 
+
+body {
+  background-image: url('https://static.vecteezy.com/system/resources/thumbnails/007/164/537/small_2x/fingerprint-identity-sensor-data-protection-system-podium-hologram-blue-light-and-concept-free-vector.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.input-container{font-size: 60px}
+.input-field{font-size: 60px}
+.switch{font-size: 30px}
+h1{font-size: 50px;}
+button{font-size: 50px;}
+</style>
 </head>
+
   <body>
     <form action="/" method="POST" style="max-width:500px;margin:auto">
-      <h1 style="color: red;">Sign up</h1 >
+      <h1 style="color: blue;">Sign up</h1 >
       <div class="input-container">
         <i class="fa fa-user icon"></i>
         <input class="input-field" type="text" placeholder="Email" name="email">
@@ -21,8 +35,9 @@
         <i class="fa fa-key icon"></i>
         <input class="input-field" type="password" placeholder="Password" name="password">
       </div>
-      <button type="submit" class="btn">Signup</button>
+      <br>
+      <button type="submit" class="btn">Sign up</button>
     </form>
-    <a href="/signin" style="color:red">Already have an account? Sign in!</a>
+    <a href="/signin" class = switch style="color:blue" >Already have an account? Sign in!</a>
 </body>
 </html>
