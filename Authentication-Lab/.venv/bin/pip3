@@ -1,4 +1,4 @@
-#!/home/meet/Documents/GitHub/Y2-Summer-Labs/Authentication-Lab/.venv/bin/python3
+#!/home/meet/Documents/GitHub/Y2-Summer-Labs/Authentication-Lab/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
