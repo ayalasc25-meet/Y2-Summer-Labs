@@ -49,7 +49,7 @@ def signup():
 def home():
     if request.method == 'GET':
         return render_template("home.html")
-        
+
     login_session["quotes"].append(request.form["quote"])
     login_session.modified = True
     print(login_session["quotes"])
@@ -65,7 +65,7 @@ def thanks():
 @app.route('/display', methods=["GET", "POST"])
 def display():
     if request.method == 'GET':
-        return render_tempTruelate("display.html", quotes=login_session["quotes"]) 
+        return render_template("display.html", quotes=login_session["quotes"]) 
   
 
 @app.route('/signout', methods=["GET", "POST"])
