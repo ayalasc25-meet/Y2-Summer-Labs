@@ -2,8 +2,10 @@
 <html>
 <body>
 	<ul>
-		{% for i in quotes%}
-		<li> {{i}}</li>
+		{% for i in all_quotes%}
+		<li> </li>
+		{{all_quotes[i]['source']}} :
+		{{all_quotes[i]['text']}}
 		{%endfor%}
 
 </body>
