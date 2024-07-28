@@ -22,12 +22,12 @@ firebaseConfig = {
 
   'measurementId': "G-YD5X1BD7HL",
 
-  'databaseURL': "https://authentication-lab-7e1ff-default-rtdb.europe-west1.firebasedatabase.app/"
+  'databaseURL': ""
+
 }
 
 firebase = pyrebase.initialize_app(firebaseConfig)
 auth = firebase.auth()
-db =firebase.database()
 
 @app.route('/', methods=['GET', 'POST'])
 def signup():
@@ -36,31 +36,25 @@ def signup():
     else:
         email = request.form['email']
         password = request.form['password']
-        username = request.form['username']
-        fullname = request.form['fullname']
         try:
             login_session['user'] = auth.create_user_with_email_and_password(email, password)
-            user_id = login_session['user']['localId']
-            user ={"fullname":fullname,"username":username, "email":email}
-            db.child('users').child(user_id).set(user)
             login_session['quotes'] = []
             return redirect(url_for('home'))
         except:
             error_msg = "Womp it failed. Try again"
             return render_template("signup.html",error=error_msg)
 
+
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     if request.method == 'GET':
         return render_template("home.html")
-    else:
-        text = request.form['quote']
-        source = request.form['source']
-        user_id = login_session['user']['localId']
-        quote ={"text":text,"source":source,"user_id":user_id}
-        db.child('quote').push(quote)
 
-        return redirect(url_for('display'))
+    login_session["quotes"].append(request.form["quote"])
+    login_session.modified = True
+    print(login_session["quotes"])
+    return redirect(url_for("thanks"))
+        
 
 
 @app.route('/thanks', methods=["GET", "POST"])
@@ -71,8 +65,7 @@ def thanks():
 @app.route('/display', methods=["GET", "POST"])
 def display():
     if request.method == 'GET':
-        all_quotes=db.child('quote').get().val()
-        return render_template("display.html", all_quotes = all_quotes) 
+        return render_template("display.html", quotes=login_session["quotes"]) 
   
 
 @app.route('/signout', methods=["GET", "POST"])
@@ -99,3 +92,26 @@ def signin():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
+    
+    
+    
+recipes
+--> userId
+    -->recipestuff
+    -->userId
+    
+    
+userId
+--> recipe1
+    --> name
+    --> fooodtype
+    
+    
+--> recipe2
+
+
+
+
+    
+    
