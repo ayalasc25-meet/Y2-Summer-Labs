@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <style>
+       /* Background image and general styles */
+       body {
+           font-family: 'Arial', sans-serif;
+           background-image: url('https://i.pinimg.com/564x/30/4f/7b/304f7b599abadf4d4cfd79883eb37fab.jpg'); /* Colorful food background */
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           background-size: cover;
+           color: #fff;
+           margin: 0;
+           padding: 20px;
+           text-align: center;
+           display: flex; /* Center the content vertically */
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           min-height: 100vh; /* Make the body take up full viewport height */
+       }
+
+       h1 {
+           font-size: 3em;
+           color: #FFD700; /* Gold */
+           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+           margin-bottom: 30px;
+       }
+
+       .input-container {
+           font-size: 1.5em;
+           margin-bottom: 20px;
+           position: relative;
+       }
+
+       .input-field {
+           font-size: 1.5em;
+           padding: 15px;
+           border-radius: 5px;
+           border: 2px solid #FFD700; /* Gold */
+           width: 80%;
+           max-width: 400px;
+           background-color: rgba(255, 255, 255, 0.9); /* Light background for readability */
+           color: #333; /* Dark text for input fields */
+       }
+
+       .icon {
+           position: absolute;
+           left: 10px;
+           top: 10px;
+           color: #FFD700; /* Gold */
+           font-size: 1.5em;
+       }
+
+       button {
+           font-size: 1.5em;
+           background-color: #FF6347; /* Tomato */
+           color: white;
+           padding: 15px 25px;
+           border-radius: 5px;
+           border: none;
+           cursor: pointer;
+           margin-top: 20px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+           transition: background-color 0.3s, transform 0.3s;
+       }
+
+       button:hover {
+           background-color: #FF4500; /* OrangeRed */
+           transform: translateY(-2px);
+       }
+
+      .switch {
+          font-size: 1.2em;
+          color: #FFD700; /* Gold */
+          text-decoration: underline;
+          margin-top: 10px; /* Reduced margin to move it closer */
+          display: inline-block; /* Make it a block for better spacing */
+      }
+
+      .switch:hover {
+          color: #FF6347; /* Tomato */
+      }
+
+       /* Add light brown background to the form with larger bottom */
+       form {
+           max-width: 500px;
+           background-color: rgba(210, 180, 140, 0.9); /* Light brown background */
+           padding: 30px 20px 50px; /* Increased bottom padding */
+           border-radius: 10px;
+           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+           animation: fadeIn 1s ease-in-out; /* Animation effect */
+       }
+
+       @keyframes fadeIn {
+           from { opacity: 0; }
+           to { opacity: 1; }
+       }
+   </style>
+</head>
+
+<body>
+    <form action="/" method="POST">
+        <h1>Sign up</h1>
+        <div class="input-container">
+            <i class="fa fa-user icon"></i>
+            <input class="input-field" type="Email" placeholder="Email" name="email">
+        </div>
+
+        <div class="input-container">
+            <i class="fa fa-key icon"></i>
+            <input class="input-field" type="password" placeholder="Password" name="password">
+        </div>
+        <br>
+        <button type="submit" class="btn">Sign up</button>
+    </form>
+    <a href="/login" class="switch">Already have an account? Sign in!</a>
+</body>
+</html>

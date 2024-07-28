@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <style>
+        /* Background image and general styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://i.pinimg.com/564x/f9/e4/ca/f9e4cae09be2bd14e8f8d663ec665bc4.jpg'); /* Cookbook background */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #FFD700; /* Gold */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: none; /* Remove default list styling */
+            padding: 0; /* Remove padding */
+        }
+
+        li {
+            font-size: 1.5em; /* Increase font size for recipe names */
+            margin: 15px 0; /* Space between recipes */
+            background-color: rgba(210, 180, 140, 0.9); /* Light brown background */
+            border-radius: 5px;
+            padding: 15px; /* Adjust padding for a shorter appearance */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px; /* Set a maximum width */
+            margin-left: auto; /* Center the list items */
+            margin-right: auto; /* Center the list items */
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #FF6347; /* Tomato */
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.5em;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: #FF4500; /* OrangeRed */
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Your Recipes</h1>
+    <ul>
+        {% for i in userrecipes %}
+        <li>Name of recipe: {{ i["namerecipe"] }}<br> The actual recipe: {{ i["recipe"] }}<br><br></li>
+        {% endfor %}
+    </ul>
+    <a href="/home" class="button">Go back to home page</a>
+    <br>
+    <a href="/addrecipe" class="button">Submit another recipe</a>
+</body>
+</html>

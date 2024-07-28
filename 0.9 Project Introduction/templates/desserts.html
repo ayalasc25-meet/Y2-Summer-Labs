@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://i.pinimg.com/236x/7d/7f/fd/7d7ffd838810aeda254aced430710bd3.jpg'); /* Colorful dessert background */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #FFD700; /* Gold */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1.8em; /* Increased font size */
+            margin-bottom: 20px;
+            color: #FFA500; /* Darker shade of gold/orange */
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .recipe-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping to next line */
+            justify-content: center; /* Center the items */
+            max-width: 1200px; /* Set a maximum width for the container */
+            margin: auto; /* Center the container */
+        }
+
+        .recipe-box {
+            background-color: rgba(210, 180, 140, 0.9); /* Light brown background */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px;
+            width: 300px; /* Fixed width for recipe boxes */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .recipe-box:hover {
+            transform: scale(1.05); /* Scale up on hover */
+        }
+
+        .switch {
+            font-size: 1.5em;
+            background-color: #FF6347; /* Tomato */
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block; /* Make it a block for better spacing */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .switch:hover {
+            background-color: #FF4500; /* OrangeRed */
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <h1>Find Recipes for Desserts Here</h1>
+    <p>Remember that these recipes were all uploaded by other users like you, so they may not be - how do I put this politely - 100% accurate.</p>
+    <div class="recipe-container">
+        {% for dessert in desserts %}
+            <div class="recipe-box">
+                <h2>{{ dessert['namerecipe'] }}</h2>
+                <p>{{ dessert['recipe'] }}</p>
+            </div>
+        {% else %}
+            <div class="recipe-box">
+                <p>No dessert recipes found.</p>
+            </div>
+        {% endfor %}
+    </div>
+    <a href="/home" class='switch'>Go back to home page</a>
+    <br>
+</body>
+</html>

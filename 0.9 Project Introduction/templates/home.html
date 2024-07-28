@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <style>
+        /* Background image and general styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://i.pinimg.com/564x/f9/e4/ca/f9e4cae09be2bd14e8f8d663ec665bc4.jpg'); /* Rustic wooden table background */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4em; /* Increased font size */
+            color: #FFD700; /* Gold */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 40px; /* Increased margin */
+        }
+
+        /* Button styles */
+        .button {
+            display: inline-block;
+            background-color: #FF6347; /* Tomato */
+            color: white;
+            padding: 20px 35px; /* Increased padding */
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.5em; /* Increased font size */
+            margin: 15px 0; /* Increased margin */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: #FF4500; /* OrangeRed */
+            transform: translateY(-2px);
+        }
+
+        /* Sign out link */
+        .signout {
+            color: #FF4500; /* OrangeRed */
+            font-size: 1.5em; /* Increased font size */
+            margin-top: 40px; /* Increased margin */
+            text-decoration: underline;
+        }
+
+        .signout:hover {
+            color: #FFD700; /* Gold */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to COCO</h1>
+    <a href="/addrecipe" class="button">Add recipe for all the world to see!</a>
+    <br>
+    <a href="/myrecipes" class="button">Click to see all your previously uploaded recipes!</a>
+    <br>
+    <a href="/desserts" class="button">All dessert recipes</a>
+    <br>
+    <a href="/maincourse" class="button">All main courses</a>
+    <br>
+    <a href="/appetizer" class="button">Appetizers!!</a>
+    <br>
+    <a href="/other" class="button">Any other foods</a>
+    <br>
+    <a href="/signout" class="signout">Sign out</a>
+</body>
+</html>

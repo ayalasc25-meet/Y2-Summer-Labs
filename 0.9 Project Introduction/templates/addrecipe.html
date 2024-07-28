@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+   <style>
+        /* Background image and general styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://i.pinimg.com/236x/3e/42/3d/3e423d18fdb6b810cabc07493d8ebc49.jpg'); /* Rustic wooden table background */
+            background-size: cover;
+            background-position: center;
+            color: rosybrown;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #FFD700; /* Gold */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 30px;
+        }
+
+        .input-field {
+            font-size: 1.5em;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #FFD700; /* Gold */
+            margin: 10px 0;
+            width: 80%;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.8); /* Light background for readability */
+        }
+
+        .radiobuttons {
+            color: red; /* Gold */
+            font-size: 2em;
+        }
+        label {
+    color: #FFD700; /* Gold */
+}
+
+
+        button {
+            font-size: 1.5em;
+            background-color: #FF6347; /* Tomato */
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #FF4500; /* OrangeRed */
+            transform: translateY(-2px);
+        }
+
+        .switch {
+            font-size: 1.2em;
+            color: #FFD700; /* Gold */
+            text-decoration: underline;
+            margin-top: 30px;
+        }
+
+        .switch:hover {
+            color: #FF6347; /* Tomato */
+
+        }
+
+    </style> 
+</head>
+
+  <body>
+    <h1>Soooo what's your recipe??</h1>
+    <form action="/addrecipe" method="POST">
+      <input class="input-field" type="text" placeholder="so what's the recipe's name?" name="namerecipe">
+      <input class="input-field" type="text" placeholder="so what's the recipe?" name="recipe">
+      <p>What type of food is your recipe for?</p>
+      <input class="radiobuttons"type="radio" name="recipetype" value= "maincourse"> maincourse<br>
+    <input class="radiobuttons" type="radio" name="recipetype" value= "appetizer"> appetizer<br>
+    <input class="radiobuttons" type="radio" name="recipetype" value= "dessert"> dessert<br>
+    <input class="radiobuttons" type="radio" name="recipetype" value= "other"> other<br>
+      <button type="submit" class="btn">submit</button>
+    </form>
+    <br>
+    <br>
+    <a href="/home" class = switch style="color:blue" >Go back to home page</a>
+</body>
+</html>
